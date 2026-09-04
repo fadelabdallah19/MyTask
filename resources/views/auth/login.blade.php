@@ -3,8 +3,8 @@
 @section('content')
 <div class="min-h-screen flex items-center justify-center bg-white p-4">
     <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800">Selamat Datang di MyTask</h1>
-        <p class="text-center text-gray-500 text-sm mt-2 mb-6">Silakan login untuk melanjutkan.</p>
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Selamat Datang di MyTask</h1>
+        <p class="text-center text-gray-500 text-sm mt-2 mb-6">Silahkan login untuk melanjutkan.</p>
 
         @if ($errors->any())
             <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">

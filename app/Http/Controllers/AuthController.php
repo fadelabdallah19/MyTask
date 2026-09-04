@@ -50,13 +50,10 @@ class AuthController extends Controller
         ]);
 
         $status = Password::broker()->sendResetLink($validated);
-        if ($status === Password::RESET_LINK_SENT) {
-            return back()->with('status', 'Kamu telah mengirim link reset password ke email Anda.');
-        }
 
-        return back()->withErrors([
-            'email' => 'Kami tidak menemukan pengguna dengan email tersebut.',
-        ])->onlyInput('email');
+        return back()->with('status', trans($status === Password::RESET_LINK_SENT
+            ? 'passwords.sent'
+            : 'passwords.user'));
     }
 
     public function showResetPasswordForm(string $token)
@@ -66,7 +63,7 @@ class AuthController extends Controller
 
     public function resetPassword(Request $request): RedirectResponse
     {
-        $request->Validate([
+        $request->validate([
             'token' => ['required'],
             'email' => ['required', 'email'],
             'password' => ['required', 'confirmed', 'min:8'],
