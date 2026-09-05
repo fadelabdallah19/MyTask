@@ -22,7 +22,7 @@
   "crons": [
     {
       "path": "/vercel/cron/reminders",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 23 * * *"
     }
   ],
   "env": {
