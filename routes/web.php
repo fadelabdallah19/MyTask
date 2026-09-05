@@ -9,7 +9,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\VercelCronController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/probe/plain', fn () => response('ok'));
+Route::get('/probe/db', fn () => response(DB::selectOne('SELECT 1 as ok')->ok));
 
 Route::get('/', function () {
     return route('login') ? redirect()->route('login') : view('welcome');
