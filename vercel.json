@@ -25,6 +25,7 @@
     "APP_DEBUG": "false",
     "LOG_CHANNEL": "stderr",
     "QUEUE_CONNECTION": "sync",
+    "VIEW_COMPILED_PATH": "/tmp",
     "CACHE_STORE": "database",
     "SESSION_DRIVER": "database",
     "APP_CONFIG_CACHE": "/tmp/config.php",
