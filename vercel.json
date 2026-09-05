@@ -19,12 +19,6 @@
       "dest": "/api/index.php"
     }
   ],
-  "crons": [
-    {
-      "path": "/vercel/cron/reminders",
-      "schedule": "0 23 * * *"
-    }
-  ],
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
