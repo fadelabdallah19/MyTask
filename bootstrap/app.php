@@ -18,6 +18,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->append(AddSecurityHeaders::class);
 
+        $middleware->trustProxies(at: '*');
+
         $middleware->alias([
             'api.token' => EnsureApiTokenIsValid::class,
             'admin' => EnsureUserIsAdmin::class,

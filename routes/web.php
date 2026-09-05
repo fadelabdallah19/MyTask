@@ -8,11 +8,14 @@ use App\Http\Controllers\NotificationSettingsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\VercelCronController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return route('login') ? redirect()->route('login') : view('welcome');
 });
+
+Route::get('/vercel/cron/reminders', VercelCronController::class);
 
 Route::middleware('guest')->group(function () {
     Route::get('/forgot-password', [AuthController::class, ShowForgotPasswordForm::class])->name('password.request');

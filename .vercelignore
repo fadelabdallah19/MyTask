@@ -1,0 +1,12 @@
+/node_modules
+/vendor
+/.git
+/.vercel
+/storage/app/firebase
+/env.php
+.env
+.env.*
+!.env.example
+/public/build
+/public/hot
+/storage/logs
